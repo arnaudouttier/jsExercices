@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>timer card transition</title>
+  </head>
+
+  <body>
+    <div class="resume">
+      <div class="resume-item">
+        <h3>Un nouvel espoir</h3>
+        <p>
+          C'est le premier opus de la saga Star Wars par sa date de sortie, mais
+          le quatrième selon l'ordre chronologique
+        </p>
+      </div>
+      <div class="resume-item">
+        <h3>L'empire contre attaque</h3>
+        <p>
+          C'est le premier opus de la saga Star Wars par sa date de sortie, mais
+          le quatrième selon l'ordre chronologique
+        </p>
+      </div>
+      <div class="resume-item">
+        <h3>Le retour du Jedi</h3>
+        <p>
+          C'est le premier opus de la saga Star Wars par sa date de sortie, mais
+          le quatrième selon l'ordre chronologique
+        </p>
+      </div>
+      <div class="resume-item">
+        <h3>La menace fantome</h3>
+        <p>
+          C'est le premier opus de la saga Star Wars par sa date de sortie, mais
+          le quatrième selon l'ordre chronologique
+        </p>
+      </div>
+      <div class="resume-item">
+        <h3>La guerre des clones</h3>
+        <p>
+          C'est le premier opus de la saga Star Wars par sa date de sortie, mais
+          le quatrième selon l'ordre chronologique
+        </p>
+      </div>
+      <div class="resume-item">
+        <h3>La revenche des Sith</h3>
+        <p>
+          C'est le premier opus de la saga Star Wars par sa date de sortie, mais
+          le quatrième selon l'ordre chronologique
+        </p>
+      </div>
+    </div>
+
+    <div class="years">
+      <h2>1977</h2>
+      <h2>1980</h2>
+      <h2>1983</h2>
+      <h2>1999</h2>
+      <h2>2001</h2>
+      <h2>2005</h2>
+    </div>
+
+    <div class="images">
+      <img class="image" src="images/sw1.jpeg" alt="Star Wars films" />
+      <img class="image" src="images/sw2.jpeg" alt="Star Wars films" />
+      <img class="image" src="images/sw3.jpeg" alt="Star Wars films" />
+      <img class="image" src="images/sw4.jpeg" alt="Star Wars films" />
+      <img class="image" src="images/sw5.jpeg" alt="Star Wars films" />
+      <img class="image" src="images/sw6.jpeg" alt="Star Wars films" />
+    </div>
+
+    <div class="progress-bar">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="front-bar"></div>
+    </div>
+
+    <div class="buttons">
+      <a href="#"><button class="btn btn-prec"></button></a>
+      <a href="#"><button class="btn btn-next"></button></a>
+    </div>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        background-color: #060447;
+        color: #fff38a;
+      }
+
+      .resume {
+        width: min(90vw, 533px);
+        height: 100%;
+        position: relative;
+        display: flex;
+        overflow: hidden;
+      }
+
+      .resume-item {
+        width: 100%;
+        position: absolute;
+        transition: transform 2s ease;
+      }
+
+      .resume-item:nth-child(2) {
+        left: 100%;
+      }
+      .resume-item:nth-child(3) {
+        left: 200%;
+      }
+      .resume-item:nth-child(4) {
+        left: 300%;
+      }
+      .resume-item:nth-child(5) {
+        left: 400%;
+      }
+      .resume-item:nth-child(6) {
+        left: 500%;
+      }
+
+
+      .years {
+        width: 90px;
+        height: 90px;
+        position: relative;
+        overflow: hidden;
+      
+      }
+
+      .years h2 {
+        width: 100%;
+        position: absolute;
+        transition: transform 2s ease;
+      }
+
+      .years h2:nth-child(2) {
+        left: 100%;
+      }
+      .years h2:nth-child(3) {
+        left: 200%;
+      }
+      .years h2:nth-child(4) {
+        left: 300%;
+      }
+      .years h2:nth-child(5) {
+        left: 400%;
+      }
+      .years h2:nth-child(6) {
+        left: 500%;
+      }
+
+
+      .images {
+        width: 300px;
+        height: 400px;
+        margin-bottom: 5rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .images .image {
+        position: absolute;
+        transition: transform 1s ease;
+      }
+
+      .images .image:nth-child(2) {
+        left: 100%;
+      }
+      .images .image:nth-child(3) {
+        left: 200%;
+      }
+      .images .image:nth-child(4) {
+        left: 300%;
+      }
+      .images .image:nth-child(5) {
+        left: 400%;
+      }
+      .images .image:nth-child(6) {
+        left: 500%;
+      }
+
+      .progress-bar {
+        width: min(70vw, 1000px);
+        height: 0px;
+        position: relative;
+        transition: width 2s ease;
+        border-bottom: 2px solid #827b68;
+      }
+
+      .circle {
+        position: absolute;
+        bottom: 0;
+        width: clamp(16px, calc(1rem + ((1vw - 3.75px) * 4.0302)), 32px);
+        height: clamp(16px, calc(1rem + ((1vw - 3.75px) * 4.0302)), 32px);
+        border-radius: 50%;
+        background-color: #fff38a;
+        transform: translate(-50%, 50%);
+      }
+
+      .circle:nth-child(2) {
+        left: 20%;
+      }
+      .circle:nth-child(3) {
+        left: 40%;
+      }
+      .circle:nth-child(4) {
+        left: 60%;
+      }
+      .circle:nth-child(5) {
+        left: 80%;
+      }
+      .circle:nth-child(6) {
+        left: 100%;
+      }
+
+      .front-bar {
+        position: absolute;
+        bottom: -2px;
+        height: 2px;
+        background-color: #fff38a;
+        width: 0px;
+        display: inline;
+      }
+
+      .buttons {
+        display: flex;
+      }
+
+      .buttons a {
+        margin-right: 6px;
+        width: 40px;
+        height: 40px;
+      }
+
+      .btn {
+        border: 0;
+        width: 40px;
+        height: 3px;
+        background-color: #fff38a;
+        position: relative;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      .btn::before,
+      .btn::after {
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 20px;
+        background-color: inherit;
+        border-radius: 3px;
+        top: 0;
+      }
+
+      .btn::before {
+        transform: rotate(45deg);
+      }
+
+      .btn::after {
+        transform: rotate(-45deg);
+      }
+
+      .btn-prec::before,
+      .btn-prec::after {
+        transform-origin: left;
+        left: 1px;
+      }
+
+      .btn-next::before,
+      .btn-next::after {
+        transform-origin: right;
+        right: 1px;
+      }
+    </style>
+  </body>
+
+  <script>
+    const filmResume = document.querySelectorAll('.resume-item')
+    const filmYear = document.querySelectorAll('.years h2')
+    const image = document.querySelectorAll('.images .image')
+    const frontBar = document.querySelector('.front-bar')
+    const buttonPrec = document.querySelector('.btn-prec')
+    const buttonNext = document.querySelector('.btn-next')
+    let index = 0
+
+    const translateX = (element, index) => {
+      element.forEach((elementItem) => {
+        elementItem.style.transform = `translate(calc(-100%*${index}) , 0%)`
+      })
+    }
+
+    // const years = (index) => {
+    //   const yearsBlock = document.querySelector('.years')
+    //   let yearContent = document.querySelector('.years h2').innerHTML
+    //   let newYear = ''
+
+    //   switch (index) {
+    //     case (index = 1):
+    //       newYear = yearContent.replace('77', '80')
+    //       yearsBlock.innerHTML = `<h2>${newYear}</h2>`
+    //       break
+    //     case (index = 2):
+    //       newYear = yearContent.replace('80', '83')
+    //       yearsBlock.innerHTML = `<h2>${newYear}</h2>`
+    //       break
+    //     case (index = 3):
+    //       newYear = yearContent.replace('83', '99')
+    //       yearsBlock.innerHTML = `<h2>${newYear}</h2>`
+    //       break
+    //     case (index = 4):
+    //       newYear = yearContent.replace('1999', '2002')
+    //       yearsBlock.innerHTML = `<h2>${newYear}</h2>`
+    //       break
+    //     case (index = 5):
+    //       newYear = yearContent.replace('02', '05')
+    //       yearsBlock.innerHTML = `<h2>${newYear}</h2>`
+    //       break
+
+    //     default:
+    //       break
+    //   }
+    // }
+
+    buttonNext.addEventListener('click', () => {
+      if (index < 5) {
+        frontBar.style.transition = `width 2s ease`
+        frontBar.style.width = `calc(${20 * index}% + 20%)`
+        index = index + 1
+        translateX(image, index)
+        translateX(filmResume, index)
+        translateX(filmYear, index)
+      }
+    })
+
+    buttonPrec.addEventListener('click', () => {
+      if (index > 0) {
+        frontBar.style.width = `calc(${20 * index}% - 20%)`
+        index = index - 1
+        translateX(image, index)
+        translateX(filmResume, index)
+        translateX(filmYear, index)
+      }
+    })
+  </script>
+</html>
